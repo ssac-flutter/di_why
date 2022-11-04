@@ -1,8 +1,9 @@
-import 'package:di_why/presentation/main/main_screen.dart';
+import 'package:di_why/di/di_setup.dart';
 import 'package:di_why/presentation/routes.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+  setup();
   runApp(const MyApp());
 }
 

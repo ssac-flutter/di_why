@@ -1,4 +1,5 @@
 import 'package:di_why/data/count_repository.dart';
+import 'package:di_why/di/di_setup.dart';
 import 'package:di_why/presentation/detail/next_screen.dart';
 import 'package:di_why/presentation/detail/next_view_model.dart';
 import 'package:di_why/presentation/main/main_screen.dart';
@@ -14,7 +15,7 @@ final GoRouter router = GoRouter(
       path: '/',
       builder: (BuildContext context, GoRouterState state) {
         return ChangeNotifierProvider(
-          create: (_) => MainViewModel(CountRepository()),
+          create: (_) => MainViewModel(getIt<CountRepository>()),
           child: const MainScreen(),
         );
       },
@@ -23,7 +24,7 @@ final GoRouter router = GoRouter(
       path: '/next',
       builder: (BuildContext context, GoRouterState state) {
         return ChangeNotifierProvider(
-          create: (_) => NextViewModel(CountRepository()),
+          create: (_) => getIt<NextViewModel>(),
           child: const NextScreen(),
         );
       },
