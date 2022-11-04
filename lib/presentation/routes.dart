@@ -15,7 +15,7 @@ final GoRouter router = GoRouter(
       path: '/',
       builder: (BuildContext context, GoRouterState state) {
         return ChangeNotifierProvider(
-          create: (_) => MainViewModel(getIt<CountRepository>()),
+          create: (_) => getIt<MainViewModel>(),
           child: const MainScreen(),
         );
       },

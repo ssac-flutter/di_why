@@ -11,7 +11,7 @@ class NextScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('DI'),
+        title: Text('${viewModel.name}, ${viewModel.isShowAd}'),
         actions: [
           IconButton(
             onPressed: () {},

@@ -1,10 +1,19 @@
-import 'package:di_why/data/count_repository.dart';
-import 'package:di_why/presentation/detail/next_view_model.dart';
+import 'package:di_why/di/di_setup.config.dart';
 import 'package:get_it/get_it.dart';
+import 'package:injectable/injectable.dart';
+
+// final getIt = GetIt.instance;
+//
+// void setup() {
+//   getIt.registerFactory(() => CountRepository());
+//   getIt.registerSingleton(NextViewModel(getIt<CountRepository>()));
+// }
 
 final getIt = GetIt.instance;
 
-void setup() {
-  getIt.registerFactory(() => CountRepository());
-  getIt.registerSingleton(NextViewModel(getIt<CountRepository>()));
-}
+@InjectableInit(
+  initializerName: r'$initGetIt', // default
+  preferRelativeImports: true, // default
+  asExtension: false, // default
+)
+void configureDependencies() => $initGetIt(getIt);

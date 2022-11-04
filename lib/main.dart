@@ -3,7 +3,7 @@ import 'package:di_why/presentation/routes.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  setup();
+  configureDependencies();
   runApp(const MyApp());
 }
 

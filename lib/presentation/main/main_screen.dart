@@ -12,7 +12,7 @@ class MainScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('DI'),
+        title: Text(viewModel.isShowAd ? '광고 있음' : '없음'),
         actions: [
           IconButton(
             onPressed: () {
